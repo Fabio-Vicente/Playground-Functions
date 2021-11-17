@@ -57,9 +57,26 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+function singleFizzBuzz(number, array) {
+  if (number % 15 === 0) {
+    array.push('fizzBuzz');
+  } else if (number % 5 === 0) {
+    array.push('buzz');
+  } else if (number % 3 === 0) {
+    array.push('fizz');
+  } else {
+    array.push('bug!');
+  }
 }
+function fizzBuzz(numbers) {
+  let v = [];
+  for (const number of numbers) {
+    singleFizzBuzz(number, v);
+  }
+  return v;
+}
+
+fizzBuzz([9, 25]);
 
 // Desafio 9
 function encode() {
