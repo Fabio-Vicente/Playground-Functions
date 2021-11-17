@@ -15,8 +15,12 @@ function splitSentence(str) {
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(arr) {
+  let s = [];
+  s.push(arr[arr.length - 1]);
+  s.push(arr[0]);
+  s = s.join(', ');
+  return s;
 }
 
 // Desafio 5
