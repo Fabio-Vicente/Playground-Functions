@@ -32,10 +32,67 @@ function techList(array, myName) {
 }
 
 // Desafio 11
-function generatePhoneNumber() {
-  // seu código aqui
+function generateSummaryOfNumbers() {
+  let numbers = [];
+  for (let i = 0; i <= 9; i += 1) {
+    numbers.push({ times: 0 });
+  }
+  return numbers;
 }
 
+function numbersSummarized(listOfNumbers) {
+  let summary = generateSummaryOfNumbers();
+  for (const number of listOfNumbers) {
+    summary[number].times += 1;
+  }
+  return summary;
+}
+
+function notPhoneDigits(phoneNumber) {
+  for (let i = 0; i < phoneNumber.length; i += 1) {
+    if (phoneNumber[i] > 9 || phoneNumber[i] < 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function tooManyTimes(phoneNumber) {
+  let phoneNumberSummarized = numbersSummarized(phoneNumber);
+  for (let i = 0; i < phoneNumber.length; i += 1) {
+    if (phoneNumberSummarized[phoneNumber[i]].times >= 3) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function initialTests(phoneNumber) {
+  let test;
+  test = notPhoneDigits(phoneNumber);
+  if (test) {
+    test = tooManyTimes(phoneNumber);
+  }
+  return test;
+}
+
+function generatePhoneNumber(phoneNumber) {
+  if (phoneNumber.length !== 11) {
+    return 'Array com tamanho incorreto.';
+  }
+  let correctNumber = initialTests(phoneNumber);
+  if (!correctNumber) {
+    return 'não é possível gerar um número de telefone com esses valores';
+  }
+  let strPhoneNumber = phoneNumber.join('');
+  const DDD = strPhoneNumber[0] + strPhoneNumber[1];
+  const prefix = strPhoneNumber[2] + strPhoneNumber[3] + strPhoneNumber[4] + strPhoneNumber[5]
+  + strPhoneNumber[6];
+  const sufix = strPhoneNumber[7] + strPhoneNumber[8] + strPhoneNumber[9] + strPhoneNumber[10];
+  return `(${DDD}) ${prefix}-${sufix}`;
+}
+
+/* console.log(generatePhoneNumber([7, 1, 9, 9, 1, 3, 6, 6, 0, 8, 8])); */
 // Desafio 12
 function triangleCheck() {
   // seu código aqui
