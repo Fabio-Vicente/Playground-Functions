@@ -92,17 +92,25 @@ function generatePhoneNumber(phoneNumber) {
   return `(${DDD}) ${prefix}-${sufix}`;
 }
 
-/* console.log(generatePhoneNumber([7, 1, 9, 9, 1, 3, 6, 6, 0, 8, 8])); */
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function triangleCheck(lineA, lineB, lineC) {
+  let shortCondition = lineA > Math.abs(lineB - lineC);
+  let longCondition = lineA < lineB + lineC;
+  return shortCondition && longCondition;
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(str) {
+  let allDrinks = str.match(/\d+/g);
+  let sumOfDrinks = 0;
+  for (const drink of allDrinks) {
+    sumOfDrinks += parseInt(drink, 10);
+  }
+  if (sumOfDrinks === 1) {
+    return `${sumOfDrinks} copo de água`;
+  }
+  return `${sumOfDrinks} copos de água`;
 }
-
 module.exports = {
   generatePhoneNumber,
   techList,
