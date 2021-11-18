@@ -133,19 +133,6 @@ function decode(str) {
   return decoded;
 }
 
-/* switch (str[i]) {
-  case 'a': str[i] = 1;
-    break;
-  case 'b': str[i] = 1;
-    break;
-  case 'c': str[i] = 1;
-    break;
-  case 'd': str[i] = 1;
-    break;
-  case 'e': str[i] = 1;
-    break;
-} */
-
 module.exports = {
   calcArea,
   catAndMouse,
