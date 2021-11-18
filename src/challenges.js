@@ -76,15 +76,75 @@ function fizzBuzz(numbers) {
   return v;
 }
 
-fizzBuzz([9, 25]);
-
 // Desafio 9
-function encode() {
-  // seu código aqui
+let coder = [
+  {
+    key: '1',
+    value: 'a',
+  },
+  {
+    key: '2',
+    value: 'e',
+  },
+  {
+    key: '3',
+    value: 'i',
+  },
+  {
+    key: '4',
+    value: 'o',
+  },
+  {
+    key: '5',
+    value: 'u',
+  },
+];
+
+function code(letter, cod, keyCod) {
+  if (letter === cod) {
+    return keyCod;
+  }
+  return '';
 }
-function decode() {
-  // seu código aqui
+
+function encode(str) {
+  let coded = '';
+  for (let i = 0; i < str.length; i += 1) {
+    for (let j = 0; j < coder.length; j += 1) {
+      coded += code(str[i], coder[j].value, coder[j].key);
+    }
+    if (coded.length <= i) {
+      coded += str[i];
+    }
+  }
+  return coded;
 }
+
+function decode(str) {
+  let decoded = '';
+  for (let i = 0; i < str.length; i += 1) {
+    for (let j = 0; j < coder.length; j += 1) {
+      decoded += code(str[i], coder[j].key, coder[j].value);
+    }
+    if (decoded.length <= i) {
+      decoded += str[i];
+    }
+  }
+  return decoded;
+}
+
+/* switch (str[i]) {
+  case 'a': str[i] = 1;
+    break;
+  case 'b': str[i] = 1;
+    break;
+  case 'c': str[i] = 1;
+    break;
+  case 'd': str[i] = 1;
+    break;
+  case 'e': str[i] = 1;
+    break;
+} */
 
 module.exports = {
   calcArea,
