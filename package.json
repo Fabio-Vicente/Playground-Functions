@@ -8,6 +8,7 @@
     "eslint-plugin-sonarjs": "0.5.0"
   },
   "scripts": {
+    "exec": "sh execChallenge.sh",
     "test": "jest /tests",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js, .jsx"
   },
