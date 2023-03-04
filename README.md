@@ -14,6 +14,8 @@ Here is my first code lines using javascript. 🙃
 This project consists on 13 problem challenges that must be solved using javascript functions.
 See each one problem described [below](#challenges).
 
+This project development is part of [Trybe](https://www.betrybe.com/) course program.
+
 ### Development Skills
 
 - Javascript (ES6);
